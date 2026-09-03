@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block titulo %}Registro de Clientes{% endblock %}
+
+{% block contenido %}
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h4 class="fw-semibold mb-4">
+                        <i class="bi bi-person-plus-fill text-primary me-2"></i>Registro de Cliente
+                    </h4>
+
+                    <form method="POST">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre completo</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="nit" class="form-label">NIT</label>
+                            <input type="text" class="form-control" id="nit" name="nit" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="correo" class="form-label">Correo electronico</label>
+                            <input type="email" class="form-control" id="correo" name="correo" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Telefono</label>
+                            <input type="text" class="form-control" id="telefono" name="telefono" required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="direccion" class="form-label">Direccion</label>
+                            <textarea class="form-control" id="direccion" name="direccion" rows="3" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary rounded-pill px-4">
+                            <i class="bi bi-check-circle me-1"></i>Registrar Cliente
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
