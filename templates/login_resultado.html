@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block titulo %}Resultado de Inicio de Sesion{% endblock %}
+
+{% block contenido %}
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            {% if exito %}
+                <div class="alert alert-success d-flex align-items-center" role="alert">
+                    <i class="bi bi-check-circle-fill fs-4 me-2"></i>
+                    <div>Bienvenido, {{ usuario }}! Has iniciado sesion correctamente.</div>
+                </div>
+            {% else %}
+                <div class="alert alert-danger d-flex align-items-center" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill fs-4 me-2"></i>
+                    <div>Usuario o contraseña incorrectos. Intenta de nuevo.</div>
+                </div>
+            {% endif %}
+
+            <div class="d-flex gap-2 mt-3">
+                <a href="/login" class="btn btn-outline-warning rounded-pill">
+                    <i class="bi bi-arrow-left me-1"></i>Intentar de nuevo
+                </a>
+                <a href="/" class="btn btn-link">
+                    <i class="bi bi-arrow-left-circle me-1"></i>Volver al panel principal
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
