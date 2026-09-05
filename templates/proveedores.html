@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block titulo %}Registro de Proveedores{% endblock %}
+
+{% block contenido %}
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h4 class="fw-semibold mb-4">
+                        <i class="bi bi-truck text-success me-2"></i>Registro de Proveedor
+                    </h4>
+
+                    <form method="POST">
+                        <div class="mb-3">
+                            <label for="empresa" class="form-label">Nombre de la empresa</label>
+                            <input type="text" class="form-control" id="empresa" name="empresa" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="contacto" class="form-label">Nombre de contacto</label>
+                            <input type="text" class="form-control" id="contacto" name="contacto" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="nit" class="form-label">NIT</label>
+                            <input type="text" class="form-control" id="nit" name="nit" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="tipo_producto" class="form-label">Tipo de producto/servicio</label>
+                            <select class="form-select" id="tipo_producto" name="tipo_producto" required>
+                                <option value="" selected disabled>Selecciona una opcion</option>
+                                <option value="Materia prima">Materia prima</option>
+                                <option value="Equipo de computo">Equipo de computo</option>
+                                <option value="Servicios profesionales">Servicios profesionales</option>
+                                <option value="Papeleria y suministros">Papeleria y suministros</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label d-block">Condicion de pago</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="condicion_pago" id="contado" value="Contado" required>
+                                <label class="form-check-label" for="contado">Contado</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="condicion_pago" id="credito" value="Credito">
+                                <label class="form-check-label" for="credito">Credito</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="activo" name="activo">
+                            <label class="form-check-label" for="activo">Proveedor activo</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-success rounded-pill px-4">
+                            <i class="bi bi-check-circle me-1"></i>Registrar Proveedor
+                        </button>
+                    </form>
+
+                    <a href="/" class="btn btn-link mt-3 ps-0">
+                        <i class="bi bi-arrow-left-circle me-1"></i>Volver al panel principal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
