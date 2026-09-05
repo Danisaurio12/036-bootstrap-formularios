@@ -11,7 +11,7 @@
                         <i class="bi bi-person-plus-fill text-primary me-2"></i>Registro de Cliente
                     </h4>
 
-                    <form method="POST">
+                    <form method="POST" id="formCliente">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre completo</label>
                             <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -37,10 +37,35 @@
                             <textarea class="form-control" id="direccion" name="direccion" rows="3" required></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary rounded-pill px-4">
+                        <button type="button" class="btn btn-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#confirmarEnvioModal">
                             <i class="bi bi-check-circle me-1"></i>Registrar Cliente
                         </button>
                     </form>
+
+                    <a href="/" class="btn btn-link mt-3 ps-0">
+                        <i class="bi bi-arrow-left-circle me-1"></i>Volver al panel principal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmacion antes de enviar el formulario -->
+    <div class="modal fade" id="confirmarEnvioModal" tabindex="-1" aria-labelledby="confirmarEnvioLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmarEnvioLabel">
+                        <i class="bi bi-question-circle-fill text-primary me-2"></i>Confirmar registro
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Estas a punto de registrar un nuevo cliente. Revisa que los datos sean correctos antes de continuar.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" form="formCliente" class="btn btn-primary">Si, registrar</button>
                 </div>
             </div>
         </div>
